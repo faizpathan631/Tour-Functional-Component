@@ -3,7 +3,7 @@ import Tour from './Tour'
 const Tours = ({ tours, removeTour }) => {
   return (
     <>
-      <h3>our tours</h3>
+      <h3>Our tours</h3>
       {tours.map((tour) => {
         return <Tour key={tour.id} {...tour} removeTour={removeTour} />
       })}

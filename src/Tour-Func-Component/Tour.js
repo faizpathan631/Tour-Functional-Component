@@ -7,7 +7,9 @@ const Tour = ({ id, image, info, name, price, removeTour }) => {
       <button onClick={() => removeTour(id)}>Remove this tour</button>
       &nbsp;&nbsp;
       <button onClick={() => setRead(!read)}>
-        {read ? 'show less' : '  read more'}
+        {read
+          ? 'show less info related to tour'
+          : 'read more info related to tour'}
       </button>
       <br />
       <br />
