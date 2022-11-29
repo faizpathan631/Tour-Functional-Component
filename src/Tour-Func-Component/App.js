@@ -6,7 +6,7 @@ function App() {
   const [tours, setTours] = useState([])
 
   const removeTour = (id) => {
-    const newTours = tours.filter((tour) => tour.id !== id)
+    const newTours = tours.filter((t) => t.id !== id)
     setTours(newTours)
   }
 
@@ -17,9 +17,9 @@ function App() {
       const tours = await response.json()
       setLoading(false)
       setTours(tours)
-    } catch (error) {
+    } catch (err) {
       setLoading(false)
-      console.log(error)
+      console.log(err)
     }
   }
   useEffect(() => {
@@ -30,20 +30,16 @@ function App() {
   }
   if (tours.length === 0) {
     return (
-      <main>
-        <div className='title'>
-          <h2>no tours left</h2>
-          <button className='btn' onClick={() => fetchTours()}>
-            refresh
-          </button>
-        </div>
-      </main>
+      <>
+        <h3>no tours left</h3>
+        <button onClick={() => fetchTours()}>refresh</button>
+      </>
     )
   }
   return (
-    <main>
+    <>
       <Tours tours={tours} removeTour={removeTour} />
-    </main>
+    </>
   )
 }
 

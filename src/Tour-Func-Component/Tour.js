@@ -11,7 +11,7 @@ const Tour = ({ id, image, info, name, price, removeTour }) => {
       </button>
       <br />
       <br />
-      <img src={image} alt={name} width={100} height={100} />
+      <img src={image} alt={name} width={250} height={250} />
       <div>
         <h4>{name}</h4>
         <h4>${price}</h4>
